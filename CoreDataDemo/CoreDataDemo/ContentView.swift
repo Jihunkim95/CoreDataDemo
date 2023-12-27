@@ -14,12 +14,69 @@ struct ContentView: View {
     @State var quantity: String = ""
     
     @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(entity: Product.entity(), sortDescriptors: [])
-    private var items: FetchedResults<Item>
+    //FetchRequest는 코어데이터가 데이터 베이스에 저장된 최신 제품 데이터를 저장할 products라는 변수를 선언하는데 사용
+    // name오름 차순정렬
+    @FetchRequest(entity: Product.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)])
+    
+    private var products: FetchedResults<Product>
 
     var body: some View {
-        Text("Hello World!")
+        NavigationView{
+            VStack{
+                TextField("Product name", text: $name)
+                TextField("Product quantity", text: $quantity)
+                
+                HStack{
+                    Spacer()
+                    Button("Add"){
+                        addProduct()
+                    }
+                    Spacer()
+                    Button("Clear"){
+                        name = ""
+                        quantity = ""
+                    }
+                    Spacer()
+                }
+                
+                List{
+                    ForEach(products) { product in
+                        HStack{
+                            Text(product.name ?? "Not found")
+                            Spacer()
+                            Text(product.quantity ?? "Not fount")
+                        }
+                    }
+                }
+                .navigationTitle("Product Database")
+            }
+            .padding()
+            .frame(maxWidth: .infinity)
+            
+
+        }
+        .padding()
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+        
+    }
+    //Button이 addProduct를 호출하면 보여주고 저장
+    private func addProduct(){
+        withAnimation{
+            let product = Product(context: viewContext)
+            product.name = name
+            product.quantity = quantity
+            
+            saveContext()
+        }
+    }
+    // 영구 저장소에 저장
+    private func saveContext(){
+        do{
+            try viewContext.save()
+        } catch {
+            let error = error as NSError
+            fatalError("An error occurred: \(error)")
+        }
     }
 }
 
