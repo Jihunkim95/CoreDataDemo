@@ -47,6 +47,7 @@ struct ContentView: View {
                             Text(product.quantity ?? "Not fount")
                         }
                     }
+                    .onDelete(perform: deleteProducts)
                 }
                 .navigationTitle("Product Database")
             }
@@ -69,6 +70,14 @@ struct ContentView: View {
             saveContext()
         }
     }
+    // 삭제
+    private func deleteProducts(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { products[$0] }.forEach(viewContext.delete)
+            saveContext()
+        }
+    }
+    
     // 영구 저장소에 저장
     private func saveContext(){
         do{
