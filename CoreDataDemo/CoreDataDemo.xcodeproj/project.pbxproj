@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C02F4FB2B3BDDA90059FF82 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02F4FA2B3BDDA90059FF82 /* ResultsView.swift */; };
 		5CB5F7312B3BB98E00056E8C /* CoreDataDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5F7302B3BB98E00056E8C /* CoreDataDemoApp.swift */; };
 		5CB5F7332B3BB98E00056E8C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5F7322B3BB98E00056E8C /* Persistence.swift */; };
 		5CB5F7362B3BB98E00056E8C /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5F7342B3BB98E00056E8C /* CoreDataDemo.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C02F4FA2B3BDDA90059FF82 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		5CB5F72D2B3BB98E00056E8C /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB5F7302B3BB98E00056E8C /* CoreDataDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDemoApp.swift; sourceTree = "<group>"; };
 		5CB5F7322B3BB98E00056E8C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				5CB5F7302B3BB98E00056E8C /* CoreDataDemoApp.swift */,
 				5CB5F7322B3BB98E00056E8C /* Persistence.swift */,
 				5CB5F7372B3BB98E00056E8C /* ContentView.swift */,
+				5C02F4FA2B3BDDA90059FF82 /* ResultsView.swift */,
 				5CB5F7442B3BB9D200056E8C /* Products.xcdatamodeld */,
 				5CB5F7392B3BB99000056E8C /* Assets.xcassets */,
 				5CB5F73B2B3BB99000056E8C /* CoreDataDemo.entitlements */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB5F7312B3BB98E00056E8C /* CoreDataDemoApp.swift in Sources */,
+				5C02F4FB2B3BDDA90059FF82 /* ResultsView.swift in Sources */,
 				5CB5F7362B3BB98E00056E8C /* CoreDataDemo.xcdatamodeld in Sources */,
 				5CB5F7382B3BB98E00056E8C /* ContentView.swift in Sources */,
 				5CB5F7462B3BB9D200056E8C /* Products.xcdatamodeld in Sources */,

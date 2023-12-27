@@ -21,7 +21,7 @@ struct ContentView: View {
     private var products: FetchedResults<Product>
 
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 TextField("Product name", text: $name)
                 TextField("Product quantity", text: $quantity)
@@ -30,6 +30,10 @@ struct ContentView: View {
                     Spacer()
                     Button("Add"){
                         addProduct()
+                    }
+                    Spacer()
+                    NavigationLink(destination: ResultsView(name: name, viewContext: viewContext)){
+                        Text("Find")
                     }
                     Spacer()
                     Button("Clear"){
